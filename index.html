@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-    <head>
-        
-        <title>visjs</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="js/vis.min.js"></script>
-        <link href="css/vis.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <div id="mynetwork"></div>
-        
-        <script type="text/javascript">
-            // create an array with nodes
-            var nodes = new vis.DataSet([
-                {id: 1, label: 'Node 1'},
-                {id: 2, label: 'Node 2'},
-                {id: 3, label: 'Node 3'},
-                {id: 4, label: 'Node 4'},
-                {id: 5, label: 'Node 5'}
-            ]);
-        
-            // create an array with edges
-            var edges = new vis.DataSet([
-                {from: 1, to: 3},
-                {from: 1, to: 2},
-                {from: 2, to: 4},
-                {from: 2, to: 5}
-            ]);
-        
-            // create a network
-            var container = document.getElementById('mynetwork');
-        
-            // provide the data in the vis format
-            var data = {
-                nodes: nodes,
-                edges: edges
-            };
-            var options = {};
-        
-            // initialize your network!
-            var network = new vis.Network(container, data, options);
-        </script>        
-        
-    </body>
+
+<head>
+
+    <title>visjs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/vis.min.js"></script>
+    <link href="css/vis.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+    <div id="mynetwork"></div>
+
+    <script type="text/javascript">
+        // create an array with nodes
+        var nodes = new vis.DataSet([
+            { id: 1, label: 'Node 1', shape: 'box', color: { background: 'pink', border: 'purple' } },
+            { id: 2, label: 'Node 2', shape: 'diamond', color: { background: 'yellow', border: 'black' } },
+            { id: 3, label: 'Node 3', shape: 'circle', color: { background: 'blue', border: 'purple' } },
+            { id: 4, label: 'Node 4', shape: 'triangle' },
+            { id: 5, label: 'Node 5', shape: 'square' }
+        ]);
+
+        // create an array with edges
+        var edges = new vis.DataSet([
+            { from: 1, to: 3 },
+            { from: 1, to: 2 },
+            { from: 2, to: 4 },
+            { from: 2, to: 5 }
+        ]);
+
+        // create a network
+        var container = document.getElementById('mynetwork');
+
+        // provide the data in the vis format
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        var options = {};
+
+        // initialize your network!
+        var network = new vis.Network(container, data, options);
+    </script>
+
+</body>
+
 </html>
